@@ -7,8 +7,6 @@ import java.util.Objects;
 public class BestStation {
 
     private List<Station> stations = new ArrayList<>();
-    private List<Point> devices = new ArrayList<>();
-
 
     public static void main(String[] args) {
         BestStation bestStation = new BestStation();
@@ -17,9 +15,9 @@ public class BestStation {
 
     private void run() {
         this.setupStations();
-        this.setupDevices();
+        List<Point> devices = this.setupDevices();
 
-        for (Point device : this.devices) {
+        for (Point device : devices) {
             BestStationResult bestStationResult = this.getBestStation(device);
             System.out.println(bestStationResult);
         }
@@ -77,16 +75,19 @@ public class BestStation {
         this.stations.add(station3);
     }
 
-    private void setupDevices() {
+    private List<Point> setupDevices() {
+        List<Point> devices = new ArrayList<>();
         Point device1 = new Point(0, 0);
         Point device2 = new Point(100, 100);
         Point device3 = new Point(15, 10);
         Point device4 = new Point(18, 18);
 
-        this.devices.add(device1);
-        this.devices.add(device2);
-        this.devices.add(device3);
-        this.devices.add(device4);
+        devices.add(device1);
+        devices.add(device2);
+        devices.add(device3);
+        devices.add(device4);
+
+        return devices;
     }
 
     public List<Station> getStations() {
@@ -95,13 +96,5 @@ public class BestStation {
 
     public void setStations(List<Station> stations) {
         this.stations = stations;
-    }
-
-    public List<Point> getDevices() {
-        return devices;
-    }
-
-    public void setDevices(List<Point> devices) {
-        this.devices = devices;
     }
 }
