@@ -1,6 +1,32 @@
 package main.java.beststation;
 
+import java.util.Objects;
+
 public class Station {
-    Point position;
-    int range;
+    public Point position;
+    public int reach;
+
+    public Station(Point position, int reach) {
+        if (reach < 0) {
+            reach = 0;
+        }
+        this.position = Objects.requireNonNull(position, "Station must have position");
+        this.reach = reach;
+    }
+
+    public boolean isInReach(Point device) {
+        double distance = this.position.getDistance(device);
+        if (this.reach == 0) {
+            return false;
+        }
+        return distance <= this.reach;
+    }
+
+    public double getPower(Point device) {
+        if (this.isInReach(device)) {
+            return Math.pow(this.reach - this.position.getDistance(device), 2);
+        } else {
+            return 0;
+        }
+    }
 }
