@@ -1,19 +1,15 @@
 package main.java.beststation;
 
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 public class LazyCachedBestStation extends CachedBestStation{
-    private Map<Point, BestStationResult> cache = new HashMap<>();
-
     private void initCache() {
         // do nothing in lazy mode
     }
 
     public void addStation(Station station) {
         List<Station> stations = this.getStations();
-        if (!isStationExist(station)) {
+        if (!this.isStationExist(station)) {
             stations.add(station);
             this.cache.clear();
         }
@@ -21,14 +17,10 @@ public class LazyCachedBestStation extends CachedBestStation{
 
     public void deleteStation(Station station) {
         List<Station> stations = this.getStations();
-        if (isStationExist(station)) {
+        if (this.isStationExist(station)) {
             stations.remove(station);
             this.cache.clear();
         }
-    }
-
-    private boolean isStationExist(Station target) {
-        return this.getStations().contains(target);
     }
 
     @Override
@@ -41,9 +33,4 @@ public class LazyCachedBestStation extends CachedBestStation{
         }
         return cacheResult;
     }
-
-    public Map<Point, BestStationResult> getCache() {
-        return cache;
-    }
-
 }

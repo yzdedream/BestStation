@@ -1,5 +1,6 @@
 package test.java;
 
+import main.java.beststation.DiligentCachedBestStation;
 import org.junit.runner.RunWith;
 import org.junit.runners.Suite;
 
@@ -8,7 +9,8 @@ import org.junit.runners.Suite;
         PointTest.class,
         StationTest.class,
         BestStationTest.class,
-        LazyCachedBestStationTest.class
+        LazyCachedBestStationTest.class,
+        DiligentCacheBestStationTest.class
 })
 
 public class TestSuite {

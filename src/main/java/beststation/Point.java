@@ -1,6 +1,7 @@
 package main.java.beststation;
 
 import java.text.DecimalFormat;
+import java.util.Objects;
 
 public class Point {
     int x;
@@ -27,5 +28,10 @@ public class Point {
         if (o == null || getClass() != o.getClass()) return false;
         Point point = (Point) o;
         return x == point.x && y == point.y;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(x, y);
     }
 }
