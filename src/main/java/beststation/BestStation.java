@@ -15,7 +15,7 @@ public class BestStation {
 
     private void run() {
         this.setupStations();
-        List<Point> devices = this.setupDevices();
+        List<Point> devices = this.initDevices();
 
         for (Point device : devices) {
             BestStationResult bestStationResult = this.getBestStation(device);
@@ -75,7 +75,7 @@ public class BestStation {
         this.stations.add(station3);
     }
 
-    private List<Point> setupDevices() {
+    private List<Point> initDevices() {
         List<Point> devices = new ArrayList<>();
         Point device1 = new Point(0, 0);
         Point device2 = new Point(100, 100);

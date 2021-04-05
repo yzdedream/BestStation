@@ -7,7 +7,8 @@ import org.junit.runners.Suite;
 @Suite.SuiteClasses({
         PointTest.class,
         StationTest.class,
-        BestStationTest.class
+        BestStationTest.class,
+        LazyCachedBestStationTest.class
 })
 
 public class TestSuite {
