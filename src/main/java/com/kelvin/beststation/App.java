@@ -1,4 +1,4 @@
-package main.java.beststation;
+package main.java.com.kelvin.beststation;
 
 import java.util.ArrayList;
 import java.util.List;

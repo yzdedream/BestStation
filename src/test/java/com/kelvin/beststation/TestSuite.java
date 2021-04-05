@@ -1,6 +1,5 @@
-package test.java;
+package test.java.com.kelvin.beststation;
 
-import main.java.beststation.DiligentCachedBestStation;
 import org.junit.runner.RunWith;
 import org.junit.runners.Suite;
 

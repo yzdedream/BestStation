@@ -1,6 +1,6 @@
-package test.java;
+package test.java.com.kelvin.beststation;
 
-import main.java.beststation.Point;
+import main.java.com.kelvin.beststation.Point;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
