@@ -21,9 +21,7 @@ public abstract class CachedBestStation extends BestStation {
         return cacheResult;
     }
 
-    protected boolean isStationExist(Station target) {
-        return this.getStations().contains(target);
-    }
+
 
     public Map<Point, BestStationResult> getCache() {
         return cache;

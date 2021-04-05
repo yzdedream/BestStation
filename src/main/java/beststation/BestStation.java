@@ -5,23 +5,7 @@ import java.util.List;
 import java.util.Objects;
 
 public class BestStation {
-
     private List<Station> stations = new ArrayList<>();
-
-    public static void main(String[] args) {
-        BestStation bestStation = new BestStation();
-        bestStation.run();
-    }
-
-    private void run() {
-        this.setupStations();
-        List<Point> devices = this.initDevices();
-
-        for (Point device : devices) {
-            BestStationResult bestStationResult = this.getBestStation(device);
-            System.out.println(bestStationResult);
-        }
-    }
 
     public BestStationResult getBestStation(Point device) {
         Objects.requireNonNull(this.stations, "Station list must not be null");
@@ -64,30 +48,20 @@ public class BestStation {
         return bestStationResult;
     }
 
-    private void setupStations() {
-        Station station1 = new Station(new Point(0, 0), 10);
-        this.stations.add(station1);
-
-        Station station2 = new Station(new Point(20, 20), 5);
-        this.stations.add(station2);
-
-        Station station3 = new Station(new Point(10, 0), 12);
-        this.stations.add(station3);
+    public void addStation(Station station) {
+        if (!this.isStationExist(station)) {
+            this.stations.add(station);
+        }
     }
 
-    private List<Point> initDevices() {
-        List<Point> devices = new ArrayList<>();
-        Point device1 = new Point(0, 0);
-        Point device2 = new Point(100, 100);
-        Point device3 = new Point(15, 10);
-        Point device4 = new Point(18, 18);
+    public void deleteStation(Station station) {
+        if (this.isStationExist(station)) {
+            this.stations.remove(station);
+        }
+    }
 
-        devices.add(device1);
-        devices.add(device2);
-        devices.add(device3);
-        devices.add(device4);
-
-        return devices;
+    protected boolean isStationExist(Station target) {
+        return this.stations.contains(target);
     }
 
     public List<Station> getStations() {
@@ -97,4 +71,5 @@ public class BestStation {
     public void setStations(List<Station> stations) {
         this.stations = stations;
     }
+
 }
