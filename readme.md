@@ -6,11 +6,11 @@ Install & run
    ```
 2. Run
    ```
-   java -cp output/production/BestStation main.java.com.kelvin.beststation.App
+   java -cp output/production/BestStation com.kelvin.beststation.App
    ```
 3. Test 
    ```
-   java -cp output/production/BestStation:output/production/BestStation/junit-4.13.2.jar:output/production/BestStation/hamcrest-core-1.3.jar org.junit.runner.JUnitCore test.java.com.kelvin.beststation.TestSuite
+   java -cp output/test/BestStation:output/production/BestStation:output/test/BestStation/junit-4.13.2.jar:output/test/BestStation/hamcrest-core-1.3.jar org.junit.runner.JUnitCore com.kelvin.beststation.test.TestSuite
    ```
 
 Thoughts
