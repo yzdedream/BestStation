@@ -10,12 +10,15 @@ public class App {
     }
 
     private void run() {
+        System.out.println("Running basic best station finder");
         BestStationFinder bestStationFinder = new BasicBestStationFinder();
         this.runBestStation(bestStationFinder);
 
+        System.out.println("Running lazy cached best station finder");
         LazyCachedBestStationFinder lazy = new LazyCachedBestStationFinder();
         this.runBestStation(lazy);
 
+        System.out.println("Running diligent cached best station finder");
         DiligentCachedBestStationFinder diligent = new DiligentCachedBestStationFinder();
         this.runBestStation(diligent);
     }
