@@ -2,7 +2,7 @@ package main.java.com.kelvin.beststation;
 
 import java.util.List;
 
-public class LazyCachedBestStation extends CachedBestStation{
+public class LazyCachedBestStationFinder extends CachedBestStationFinder {
     private void initCache() {
         // do nothing in lazy mode
     }

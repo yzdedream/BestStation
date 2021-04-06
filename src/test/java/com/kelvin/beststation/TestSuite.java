@@ -7,9 +7,9 @@ import org.junit.runners.Suite;
 @Suite.SuiteClasses({
         PointTest.class,
         StationTest.class,
-        BestStationTest.class,
-        LazyCachedBestStationTest.class,
-        DiligentCacheBestStationTest.class
+        BasicBestStationFinderTest.class,
+        LazyCachedBestStationFinderTest.class,
+        DiligentCacheBestStationFinderTest.class
 })
 
 public class TestSuite {

@@ -3,12 +3,8 @@ package main.java.com.kelvin.beststation;
 import java.util.HashMap;
 import java.util.Map;
 
-public abstract class CachedBestStation extends BestStation {
+public abstract class CachedBestStationFinder extends BestStationFinder {
     Map<Point, BestStationResult> cache = new HashMap<>();
-
-    public abstract void addStation(Station station);
-
-    public abstract void deleteStation(Station station);
 
     @Override
     public BestStationResult getBestStation(Point device) {
@@ -20,8 +16,6 @@ public abstract class CachedBestStation extends BestStation {
         }
         return cacheResult;
     }
-
-
 
     public Map<Point, BestStationResult> getCache() {
         return cache;

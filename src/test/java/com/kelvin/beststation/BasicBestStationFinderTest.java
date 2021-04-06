@@ -1,9 +1,6 @@
 package test.java.com.kelvin.beststation;
 
-import main.java.com.kelvin.beststation.BestStation;
-import main.java.com.kelvin.beststation.BestStationResult;
-import main.java.com.kelvin.beststation.Point;
-import main.java.com.kelvin.beststation.Station;
+import main.java.com.kelvin.beststation.*;
 import org.junit.Test;
 
 import java.util.ArrayList;
@@ -11,12 +8,12 @@ import java.util.List;
 
 import static org.junit.Assert.*;
 
-public class BestStationTest {
+public class BasicBestStationFinderTest {
     private static final double DELTA = 1e-15;
 
     @Test
-    public void testBestStation() {
-        BestStation bestStation = new BestStation();
+    public void testBasicBestStation() {
+        BestStationFinder bestStationFinder = new BasicBestStationFinder();
         List<Station> stations = new ArrayList<>();
         List<Point> devices = new ArrayList<>();
 
@@ -29,30 +26,30 @@ public class BestStationTest {
         Station station3 = new Station(new Point(10, 0), 12);
         stations.add(station3);
 
-        bestStation.setStations(stations);
+        bestStationFinder.setStations(stations);
         Point device1 = new Point(0, 10);
-        BestStationResult result = bestStation.getBestStation(device1);
+        BestStationResult result = bestStationFinder.getBestStation(device1);
         assertTrue(result.isResultExist);
         assertEquals(result.bestStation, station1);
         assertEquals(result.bestPower, 0, DELTA);
 
         Point device2 = new Point(30, 30);
-        BestStationResult result2 = bestStation.getBestStation(device2);
+        BestStationResult result2 = bestStationFinder.getBestStation(device2);
         assertFalse(result2.isResultExist);
     }
 
     @Test(expected = NullPointerException.class)
     public void testBestStationWithNullStations() {
-        BestStation bestStation = new BestStation();
-        bestStation.setStations(null);
+        BestStationFinder bestStationFinder = new BasicBestStationFinder();
+        bestStationFinder.setStations(null);
         Point device = new Point(0, 0);
-        bestStation.getBestStation(device);
+        bestStationFinder.getBestStation(device);
     }
 
     @Test(expected = NullPointerException.class)
     public void testBestStationWithNullDevice() {
-        BestStation bestStation = new BestStation();
-        bestStation.setStations(new ArrayList<>());
-        bestStation.getBestStation(null);
+        BestStationFinder bestStationFinder = new BasicBestStationFinder();
+        bestStationFinder.setStations(new ArrayList<>());
+        bestStationFinder.getBestStation(null);
     }
 }

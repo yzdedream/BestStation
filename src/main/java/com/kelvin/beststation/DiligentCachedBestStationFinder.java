@@ -3,7 +3,7 @@ package main.java.com.kelvin.beststation;
 import java.util.ArrayList;
 import java.util.List;
 
-public class DiligentCachedBestStation extends CachedBestStation {
+public class DiligentCachedBestStationFinder extends CachedBestStationFinder {
 
     @Override
     public void addStation(Station station) {

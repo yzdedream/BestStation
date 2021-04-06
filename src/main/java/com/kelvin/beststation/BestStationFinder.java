@@ -4,8 +4,11 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
-public class BestStation {
-    private List<Station> stations = new ArrayList<>();
+public abstract class BestStationFinder {
+    protected List<Station> stations = new ArrayList<>();
+
+    public abstract void addStation(Station station);
+    public abstract void deleteStation(Station station);
 
     public BestStationResult getBestStation(Point device) {
         Objects.requireNonNull(this.stations, "Station list must not be null");
@@ -48,18 +51,6 @@ public class BestStation {
         return bestStationResult;
     }
 
-    public void addStation(Station station) {
-        if (!this.isStationExist(station)) {
-            this.stations.add(station);
-        }
-    }
-
-    public void deleteStation(Station station) {
-        if (this.isStationExist(station)) {
-            this.stations.remove(station);
-        }
-    }
-
     protected boolean isStationExist(Station target) {
         return this.stations.contains(target);
     }
@@ -71,5 +62,4 @@ public class BestStation {
     public void setStations(List<Station> stations) {
         this.stations = stations;
     }
-
 }

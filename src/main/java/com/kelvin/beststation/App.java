@@ -10,36 +10,36 @@ public class App {
     }
 
     private void run() {
-        BestStation bestStation = new BestStation();
-        this.runBestStation(bestStation);
+        BestStationFinder bestStationFinder = new BasicBestStationFinder();
+        this.runBestStation(bestStationFinder);
 
-        LazyCachedBestStation lazy = new LazyCachedBestStation();
+        LazyCachedBestStationFinder lazy = new LazyCachedBestStationFinder();
         this.runBestStation(lazy);
 
-        DiligentCachedBestStation diligent = new DiligentCachedBestStation();
+        DiligentCachedBestStationFinder diligent = new DiligentCachedBestStationFinder();
         this.runBestStation(diligent);
     }
 
-    private void runBestStation(BestStation bestStation) {
-        this.setupStations(bestStation);
+    private void runBestStation(BestStationFinder bestStationFinder) {
+        this.initStations(bestStationFinder);
         List<Point> devices = this.initDevices();
 
         for (Point device : devices) {
-            BestStationResult bestStationResult = bestStation.getBestStation(device);
+            BestStationResult bestStationResult = bestStationFinder.getBestStation(device);
             System.out.println(bestStationResult);
         }
         System.out.println("----------------");
     }
 
-    private void setupStations(BestStation bestStation) {
+    private void initStations(BestStationFinder bestStationFinder) {
         Station station1 = new Station(new Point(0, 0), 10);
-        bestStation.addStation(station1);
+        bestStationFinder.addStation(station1);
 
         Station station2 = new Station(new Point(20, 20), 5);
-        bestStation.addStation(station2);
+        bestStationFinder.addStation(station2);
 
         Station station3 = new Station(new Point(10, 0), 12);
-        bestStation.addStation(station3);
+        bestStationFinder.addStation(station3);
     }
 
     private List<Point> initDevices() {
