@@ -1,9 +1,9 @@
 package test.java.com.kelvin.beststation;
 
-import main.java.com.kelvin.beststation.BestStationResult;
+import main.java.com.kelvin.beststation.model.BestStationResult;
 import main.java.com.kelvin.beststation.LazyCachedBestStationFinder;
-import main.java.com.kelvin.beststation.Point;
-import main.java.com.kelvin.beststation.Station;
+import main.java.com.kelvin.beststation.model.Point;
+import main.java.com.kelvin.beststation.model.Station;
 import org.junit.Before;
 import org.junit.Test;
 

@@ -1,4 +1,4 @@
-package main.java.com.kelvin.beststation;
+package main.java.com.kelvin.beststation.model;
 
 import java.util.Objects;
 
