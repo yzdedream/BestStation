@@ -20,7 +20,7 @@ public class LazyCachedBestStationFinderTest {
 
 
     @Before
-    public void setupDevices() {
+    public void initDevices() {
         this.devices = new ArrayList<>();
         Point device1 = new Point(0, 0);
         Point device2 = new Point(100, 100);
