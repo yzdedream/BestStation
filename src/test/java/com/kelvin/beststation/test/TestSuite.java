@@ -1,4 +1,4 @@
-package test.java.com.kelvin.beststation;
+package com.kelvin.beststation.test;
 
 import org.junit.runner.RunWith;
 import org.junit.runners.Suite;

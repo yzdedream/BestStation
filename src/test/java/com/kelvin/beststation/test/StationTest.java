@@ -1,7 +1,7 @@
-package test.java.com.kelvin.beststation;
+package com.kelvin.beststation.test;
 
-import main.java.com.kelvin.beststation.model.Point;
-import main.java.com.kelvin.beststation.model.Station;
+import com.kelvin.beststation.model.Point;
+import com.kelvin.beststation.model.Station;
 import org.junit.Test;
 
 import static org.junit.Assert.assertFalse;

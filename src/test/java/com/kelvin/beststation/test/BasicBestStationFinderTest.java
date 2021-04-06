@@ -1,15 +1,18 @@
-package test.java.com.kelvin.beststation;
+package com.kelvin.beststation.test;
 
-import main.java.com.kelvin.beststation.*;
-import main.java.com.kelvin.beststation.model.BestStationResult;
-import main.java.com.kelvin.beststation.model.Point;
-import main.java.com.kelvin.beststation.model.Station;
+
+import com.kelvin.beststation.BasicBestStationFinder;
+import com.kelvin.beststation.BestStationFinder;
+import com.kelvin.beststation.model.BestStationResult;
+import com.kelvin.beststation.model.Point;
+import com.kelvin.beststation.model.Station;
 import org.junit.Test;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import static org.junit.Assert.*;
+
 
 public class BasicBestStationFinderTest {
     private static final double DELTA = 1e-15;

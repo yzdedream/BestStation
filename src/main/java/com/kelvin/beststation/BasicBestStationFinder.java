@@ -1,6 +1,7 @@
-package main.java.com.kelvin.beststation;
+package com.kelvin.beststation;
 
-import main.java.com.kelvin.beststation.model.Station;
+
+import com.kelvin.beststation.model.Station;
 
 public class BasicBestStationFinder extends BestStationFinder{
     public void addStation(Station station) {

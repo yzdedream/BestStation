@@ -1,4 +1,4 @@
-package main.java.com.kelvin.beststation.model;
+package com.kelvin.beststation.model;
 
 import java.text.DecimalFormat;
 import java.util.Objects;

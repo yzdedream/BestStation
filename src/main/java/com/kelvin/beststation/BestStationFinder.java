@@ -1,8 +1,9 @@
-package main.java.com.kelvin.beststation;
+package com.kelvin.beststation;
 
-import main.java.com.kelvin.beststation.model.BestStationResult;
-import main.java.com.kelvin.beststation.model.Point;
-import main.java.com.kelvin.beststation.model.Station;
+
+import com.kelvin.beststation.model.BestStationResult;
+import com.kelvin.beststation.model.Point;
+import com.kelvin.beststation.model.Station;
 
 import java.util.ArrayList;
 import java.util.List;
