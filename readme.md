@@ -35,3 +35,5 @@ Thoughts
    * Basic finder is suitable for small scale demo purposes
    * Lazy finder is suitable for frequent add/delete station scenarios
    * Diligent finder is suitable for infrequent station changes
+    
+* For real projects PostGIS or Oracle Spacial may be better choices
