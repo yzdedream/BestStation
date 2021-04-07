@@ -7,10 +7,6 @@ import com.kelvin.beststation.model.Station;
 import java.util.List;
 
 public class LazyCachedBestStationFinder extends CachedBestStationFinder {
-    private void initCache() {
-        // do nothing in lazy mode
-    }
-
     public void addStation(Station station) {
         List<Station> stations = this.getStations();
         if (!this.isStationExist(station)) {
