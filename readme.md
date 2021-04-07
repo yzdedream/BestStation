@@ -29,6 +29,7 @@ Thoughts
    * Adding a station with reach of r to existing n stations, time complexity is O(n * r^2)
    * For devices within coverage, query time complexity is O(1)
    * For devices outside of coverage, query time complexity is O(n)
+    * Space complexity of the cache is O(n * r^2) 
    
 * Methods
    * Basic finder is suitable for small scale demo purposes
